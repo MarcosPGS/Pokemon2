@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+html, body
+        height: 100%
+        font-family: "Futura LT Book", "Helvetica Neue", Helvetica, Arial, sans-serif
+:root
+    --cor-padrao: #1a237e
+    --cor-caixa-branca: #ffffff
+    --cor-200: #e8eaf6
+    --cor-400: #5c6bc0
+    --cor-cinza: #757575
+    --cor-accent: rgb(252, 45, 129)
+    --cor-ciano: #00B2A0
+    --cor-vermelha: #e96d82
+    --cor-titulo-pagina: rgba(0, 0, 0, 0.54)
+    --cor-titulo-card: rgba(0, 0, 0, 0.87)
+    /*Fonte padrão*/
+    --fonte-padrao: "Futura LT Book", "Helvetica Neue", Helvetica, Arial,sans-serif
+    --fonte-tamanho-padrao: 13px
+
+    /* Margens */
+    --margem-botao-padrao: 20px
+    --margen-top-form: 30px
+
+    /* Peso das fontes */
+    --fonte-regular: 400
+    --fonte-medium: 500
+    --fonte-bold: 700
+.menu
+    background-color:#1a237e
+
+
+.footer
+    height: 40px
+    position: fixed
+    bottom: 0
+    display: flex
+    width: 100%
+    justify-content: space-between
+    background-color: var(--cor-padrao)
+    z-index: 1
+    margin-top: 30px
+    
+
+@media (min-width: 768px)
+    html 
+        font-size: 16px
+
+
+
+a
+ .navbar-brand 
+    white-space: normal
+    text-align: center
+    word-break: break-all
+
+
+.main-container 
+    padding-top: 25px
+    padding-right: 15px
+    padding-left: 15px
+    padding-bottom: 100px
+    margin-right: auto
+    margin-left: auto
+    overflow: hidden
+
+.card-container 
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-top: 16px
+            
+.margins
+    padding-left: 10px
+
+.card 
+    transition: all 0.2s ease-in-out
+            
+          
+.card-container .card:not(:last-child) 
+    margin-right: 0
+            
+          
+           
+          
+.card-container .card:not(.highlight-card) 
+    cursor: pointer
+
+.card-container .card:not(.highlight-card):hover 
+    transform: translateY(-3px)
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35)
+          
+          
+            /* Responsive Styles */
+@media screen and (max-width: 767px) 
+          
+    .card-container > *:not(.circle-link) .terminal 
+        width: 100%
+
+    .card:not(.highlight-card) 
+        height: 16px
+        margin: 8px 0
+              
+          
+    .card.highlight-card 
+        span 
+            margin-left: 72px
+    
+
+    
+              
+            
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap'
+@import '~ngx-toastr/toastr'
+@import '~ngx-toastr/toastr-bs4-alert'

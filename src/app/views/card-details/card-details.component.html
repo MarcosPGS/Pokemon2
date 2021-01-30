@@ -1,0 +1,103 @@
+<div class="container-fluid main-container">
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Detalhe do ataque</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="d('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <span>Especificações do ataque <strong>Pokémon</strong> abaixo:</span>
+      <ul>
+        <li>
+          Custo de “mana”:
+          {{ ataque.cost }}
+        </li>
+        <li>
+          Nome:
+          {{ ataque.name }}
+        </li>
+        <li>
+          Dano:
+          {{ ataque.damage }}
+        </li>
+        <li i18n>
+          Descrição:
+          {{ ataque.text }}
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+
+  <div class="row " style="text-align: center;">
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{ card.imageUrlHiRes }}" alt="{{ card.name }}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <div>
+              <div>
+                <p><strong>ID:</strong> {{ card.id }}</p>
+                <p><strong>Nome:</strong> {{ card.name }}</p>
+              </div>
+              <div *ngFor="let item of card.resistances">
+                <p><strong>Resistencia(s):</strong></p>
+                <ul>
+                  <li>Tipo: {{ item.type }} - Valor: {{ item.value }}</li>
+                </ul>
+              </div>
+  
+              <div *ngFor="let item of card.weaknesses">
+                <p><strong>Fraqueza(s):</strong></p>
+                <ul>
+                  <li>Tipo: {{ item.type }} - Valor: {{ item.value }}</li>
+                </ul>
+              </div>
+  
+              <div *ngFor="let item of card.types">
+                <p><strong>Tipo(s):</strong></p>
+                <ul>
+                  <li>{{ item }}</li>
+                </ul>
+              </div>
+  
+              <div>
+                <p><strong>Ataque(s):</strong></p>
+                <div *ngFor="let ataque of ataques">
+                  <ul>
+                    <li>
+                      {{ ataque.name }}
+                      <button class="btn btn-primary" (click)="open(content, ataque)">
+                        <i class="fa fa-search-plus"></i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="botoes">
+            <button
+              class="btn "
+              style="background-color: var(--cor-accent); color: #ffffff"
+              (click)="voltar()"
+            >
+              VOLTAR
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+ 
+</div>
